@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов» [![Build status][travis-image]][travis-url]
 
 * Студент: [Дмитрий Шахович](https://up.htmlacademy.ru/react/2/user/172395).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Марков](https://htmlacademy.ru/profile/damarkov).
 
 ---
 
