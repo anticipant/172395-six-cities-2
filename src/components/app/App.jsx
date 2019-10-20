@@ -10,7 +10,7 @@ const App = (props) => {
 };
 
 App.propTypes = {
-  settings: PropTypes.object,
+  settings: PropTypes.object.isRequired,
 };
 
 export default App;
