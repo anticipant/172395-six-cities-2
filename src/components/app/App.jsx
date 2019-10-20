@@ -1,9 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const App = () => {
+import SuggestionList from "../suggestion-list/SuggestionList";
+
+const App = (props) => {
   return (
-    <div>Hi Keks</div>
+    <SuggestionList cards={props.settings.cards}/>
   );
+};
+
+App.propTypes = {
+  settings: PropTypes.object,
 };
 
 export default App;

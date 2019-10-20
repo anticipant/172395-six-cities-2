@@ -4,13 +4,13 @@ import ReactDOM from 'react-dom';
 import App from "./components/app/App";
 
 const init = () => {
-  const setting = {
+  const settings = {
     cards: [`Beautiful & luxurious apartment at great location`, `Wood and stone place`],
   };
 
   ReactDOM.render(
       <App
-        setting = { setting }
+        settings = { settings }
       />,
       document.querySelector(`#root`));
 };
