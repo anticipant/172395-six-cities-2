@@ -5,7 +5,7 @@ import SuggestionList from "../suggestion-list/SuggestionList";
 
 const App = (props) => {
   return (
-    <SuggestionList cards={props.settings.cards}/>
+    <SuggestionList cards={props.settings.cards} onClickHandler={props.settings.onClickHandler}/>
   );
 };
 
