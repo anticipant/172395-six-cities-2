@@ -8,7 +8,7 @@ class OfferCard extends Component {
   }
 
   onHover() {
-    this.props.onHover(this.props.index);
+    this.props.onHover(this.props.id);
   }
 
   render() {
@@ -56,6 +56,7 @@ class OfferCard extends Component {
 }
 OfferCard.propTypes = {
   card: PropTypes.shape({
+    id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
     mark: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
@@ -63,7 +64,6 @@ OfferCard.propTypes = {
     rating: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
   }).isRequired,
-  index: PropTypes.number.isRequired,
   onHover: PropTypes.func.isRequired,
 };
 

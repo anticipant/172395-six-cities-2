@@ -108,9 +108,8 @@ class SuggestionList extends React.Component {
                 </form>
                 <div className="cities__places-list places__list tabs__content">
 
-                  {cards.map((it, index) => <OfferCard
-                    index = {index}
-                    key = {`${it.name}-${index}`}
+                  {cards.map((it) => <OfferCard
+                    key = {it.id}
                     card = {it}
                     onHover = {this.onHover}
                   />)}
