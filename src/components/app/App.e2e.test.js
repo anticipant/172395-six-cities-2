@@ -7,11 +7,19 @@ Enzyme.configure({adapter: new Adapter()});
 
 it(`simulates click events`, () => {
 
+  const offers = [{
+    id: 444,
+    name: `e2e 1`,
+    mark: `Premium`,
+    image: `img/apartment-01.jpg`,
+    price: 44,
+    rating: 44,
+    type: `44`
+  }];
   const handler = jest.fn();
-  const tree = mount(<App settings={{
-    cards: [`e2e 1`, `e2e 2`],
-    onClickHandler: handler,
-  }}/>);
+  const tree = mount(<App
+    offers = {offers}
+  />);
   const btn = tree.find(`.places__sorting-caption`);
   btn.simulate(`click`);
   expect(handler).toHaveBeenCalledTimes(1);

@@ -8,7 +8,7 @@ class OfferCard extends Component {
   }
 
   onHover() {
-    this.props.onHover(this.props.id);
+    this.props.onHover(this.props.card.id);
   }
 
   render() {
