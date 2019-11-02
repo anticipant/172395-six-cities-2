@@ -11,7 +11,6 @@ class SuggestionList extends React.Component {
     this.onHover = this.onHover.bind(this);
   }
   onHover(id) {
-    console.log('id', id);
     if (this.state.activeCard !== id) {
       this.setState({
         activeCard: id,
@@ -20,7 +19,6 @@ class SuggestionList extends React.Component {
   }
 
   render() {
-    // console.log('render');
     const {cards} = this.props;
     return (
       <div className="page page--gray page--main">
