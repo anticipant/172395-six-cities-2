@@ -7,7 +7,6 @@ const App = (props) => {
   return (
     <SuggestionList
       cards = {props.offers}
-      // onClickHandler={props.settings.onClickHandler}
     />
   );
 };

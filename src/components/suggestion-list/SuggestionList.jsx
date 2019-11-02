@@ -127,7 +127,6 @@ class SuggestionList extends React.Component {
 
 SuggestionList.propTypes = {
   cards: PropTypes.array.isRequired,
-  // onClickHandler: PropTypes.func.isRequired,
 };
 
 export default SuggestionList;
