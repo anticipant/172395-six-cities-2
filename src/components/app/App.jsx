@@ -5,12 +5,14 @@ import SuggestionList from "../suggestion-list/SuggestionList";
 
 const App = (props) => {
   return (
-    <SuggestionList cards={props.settings.cards} onClickHandler={props.settings.onClickHandler}/>
+    <SuggestionList
+      cards = {props.offers}
+    />
   );
 };
 
 App.propTypes = {
-  settings: PropTypes.object.isRequired,
+  offers: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default App;
