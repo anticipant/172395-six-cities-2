@@ -24,6 +24,6 @@ it(`simulates click events`, () => {
   />);
   const card = tree.find(`.cities__place-card`);
   card.simulate(`mouseover`);
-  expect(handler).toHaveReturnedWith(444);
+  expect(handler).toHaveReturnedWith(offer);
 
 });

@@ -10,10 +10,10 @@ class SuggestionList extends React.Component {
     };
     this.onHover = this.onHover.bind(this);
   }
-  onHover(id) {
-    if (this.state.activeCard !== id) {
+  onHover(card) {
+    if (this.state.activeCard !== card.id) {
       this.setState({
-        activeCard: id,
+        activeCard: card.id,
       });
     }
   }
