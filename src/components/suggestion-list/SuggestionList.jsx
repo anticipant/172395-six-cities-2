@@ -9,9 +9,10 @@ class SuggestionList extends React.Component {
     this.state = {
       activeCard: 1,
     };
-    this.onHover = this.onHover.bind(this);
+    this.hoverCardHandler = this.hoverCardHandler.bind(this);
   }
-  onHover(card) {
+
+  hoverCardHandler(card) {
     if (this.state.activeCard !== card.id) {
       this.setState({
         activeCard: card.id,
@@ -89,7 +90,8 @@ class SuggestionList extends React.Component {
                   {cards.map((it) => <OfferCard
                     key = {it.id}
                     card = {it}
-                    onHover = {this.onHover}
+                    onHover = {this.hoverCardHandler}
+                    onCardClick = {this.props.onCardClick}
                   />)}
 
                 </div>
@@ -107,6 +109,7 @@ class SuggestionList extends React.Component {
 
 SuggestionList.propTypes = {
   cards: PropTypes.array.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default SuggestionList;

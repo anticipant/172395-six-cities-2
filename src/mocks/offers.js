@@ -16,7 +16,7 @@ const offers = [
       id: 3,
       isPro: true,
       name: `Angelina`,
-      avatarUrl: `img/1.png`
+      avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
   },
@@ -37,7 +37,7 @@ const offers = [
       id: 2,
       isPro: true,
       name: `Angelina2`,
-      avatarUrl: `img/2.png`
+      avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A2 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
   },
@@ -58,7 +58,7 @@ const offers = [
       id: 3,
       isPro: true,
       name: `Angelina3`,
-      avatarUrl: `img/3.png`
+      avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A3 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
   },
@@ -79,7 +79,7 @@ const offers = [
       id: 4,
       isPro: true,
       name: `Angelina4`,
-      avatarUrl: `img/4.png`
+      avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A4 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
   },
