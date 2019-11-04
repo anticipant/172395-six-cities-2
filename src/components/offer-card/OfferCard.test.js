@@ -16,6 +16,7 @@ it(`OfferCard correctly renders after relaunch`, () => {
     key = {card.id}
     card = {card}
     onHover = {() => {}}
+    onCardClick = {() => {}}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

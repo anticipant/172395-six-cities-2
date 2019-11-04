@@ -5,10 +5,15 @@ class OfferCard extends Component {
   constructor(props) {
     super(props);
     this.onHover = this.onHover.bind(this);
+    this.onCardClick = this.onCardClick.bind(this);
   }
 
   onHover() {
     this.props.onHover(this.props.card);
+  }
+
+  onCardClick() {
+    this.props.onCardClick(this.props.card);
   }
 
   render() {
@@ -45,7 +50,9 @@ class OfferCard extends Component {
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
-          <h2 className="place-card__name">
+          <h2
+            onClick={this.onCardClick}
+            className="place-card__name">
             <a href="#">{card.name}</a>
           </h2>
           <p className="place-card__type">{card.type}</p>
@@ -65,6 +72,7 @@ OfferCard.propTypes = {
     type: PropTypes.string.isRequired,
   }).isRequired,
   onHover: PropTypes.func.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default OfferCard;
