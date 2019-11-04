@@ -28,7 +28,7 @@ const Header = (props) => {
   );
 };
 
-Header.propsTypes = {
+Header.propTypes = {
   isMainPage: PropTypes.bool,
 };
 
