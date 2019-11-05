@@ -72,7 +72,7 @@ describe(`what handler return`, () => {
       onHover = { handler }
       onCardClick = { handler }
     />);
-    const title = tree.find(`.place-card__name`);
+    const title = tree.find(`.place-card__name a`);
     title.simulate(`click`);
     expect(handler).toHaveReturnedWith(offer);
 

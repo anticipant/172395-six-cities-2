@@ -6,7 +6,7 @@ import OfferDetails from "../offer-details/OfferDetails";
 
 const getPageScreen = (props) => {
   const {offers, selectedCard, cardClickHandler} = props;
-  console.log('selectedCard', selectedCard);
+
   switch (location.pathname) {
     case `/`:
       return <SuggestionList
@@ -42,8 +42,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('this.state.selectedCard', this.state.selectedCard);
-    if (this.state.selectedCard) debugger
     return (
       <Fragment>
         {

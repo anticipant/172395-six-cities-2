@@ -90,10 +90,10 @@ exports[`OfferCard correctly renders after relaunch 1`] = `
     </div>
     <h2
       className="place-card__name"
-      onClick={[Function]}
     >
       <a
-        href="#"
+        href="/offer"
+        onClick={[Function]}
       >
         bla bla bla
       </a>

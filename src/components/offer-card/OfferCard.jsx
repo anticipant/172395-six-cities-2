@@ -12,7 +12,10 @@ class OfferCard extends PureComponent {
     this.props.onHover(this.props.card);
   }
 
-  onCardClick() {
+  onCardClick(evt) {
+    evt.preventDefault();
+    let path = evt.target.href;
+    window.history.pushState({route: path}, `some title`, path);
     this.props.onCardClick(this.props.card);
   }
 
@@ -53,9 +56,10 @@ class OfferCard extends PureComponent {
             </div>
           </div>
           <h2
-            onClick={this.onCardClick}
             className="place-card__name">
-            <a href="#">{card.title}</a>
+            <a
+              onClick={this.onCardClick}
+              href="/offer">{card.title}</a>
           </h2>
           <p className="place-card__type">{card.type}</p>
         </div>

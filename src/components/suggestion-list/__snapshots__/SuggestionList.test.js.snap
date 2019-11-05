@@ -231,7 +231,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                 className="place-card__mark"
               >
                 <span>
-                  Premium2
+                  Premium
                 </span>
               </div>
               <div
@@ -244,7 +244,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-02.jpg"
+                    src="img/apartment-0555.jpg"
                     width="260"
                   />
                 </a>
@@ -262,7 +262,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                       className="place-card__price-value"
                     >
                       €
-                      133
+                      331232133
                     </b>
                     <span
                       className="place-card__price-text"
@@ -299,7 +299,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     <span
                       style={
                         Object {
-                          "width": "13%",
+                          "width": "123213%",
                         }
                       }
                     />
@@ -314,15 +314,16 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                   className="place-card__name"
                 >
                   <a
-                    href="#"
+                    href="/offer"
+                    onClick={[Function]}
                   >
-                    Beautiful & luxurious apartment at great location
+                    lorem imp
                   </a>
                 </h2>
                 <p
                   className="place-card__type"
                 >
-                  Apartment 2
+                  Apartment 31232132
                 </p>
               </div>
             </article>

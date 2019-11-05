@@ -7,7 +7,7 @@ const Header = (props) => {
       <div className="container">
         <div className="header__wrapper">
           <div className="header__left">
-            <a className={`header__logo-link ${props.isMainPage ? `header__logo-link--active` : ``}`} href={props.isMainPage ? undefined : `main.html`}>
+            <a className={`header__logo-link ${props.isMainPage ? `header__logo-link--active` : ``}`} href={props.isMainPage ? undefined : `/`}>
               <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41"/>
             </a>
           </div>
