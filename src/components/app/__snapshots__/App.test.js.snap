@@ -244,7 +244,7 @@ exports[`App correctly renders after relaunch 1`] = `
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-01.jpg"
+                    src="img/apartment-03.jpg"
                     width="260"
                   />
                 </a>
@@ -262,7 +262,7 @@ exports[`App correctly renders after relaunch 1`] = `
                       className="place-card__price-value"
                     >
                       €
-                      120
+                      333
                     </b>
                     <span
                       className="place-card__price-text"
@@ -299,7 +299,7 @@ exports[`App correctly renders after relaunch 1`] = `
                     <span
                       style={
                         Object {
-                          "width": "93%",
+                          "width": "33%",
                         }
                       }
                     />
@@ -314,15 +314,16 @@ exports[`App correctly renders after relaunch 1`] = `
                   className="place-card__name"
                 >
                   <a
-                    href="#"
+                    href="/offer"
+                    onClick={[Function]}
                   >
-                    Beautiful & luxurious apartment at great location
+                    123 123 123
                   </a>
                 </h2>
                 <p
                   className="place-card__type"
                 >
-                  Apartment
+                  Apartment 3
                 </p>
               </div>
             </article>

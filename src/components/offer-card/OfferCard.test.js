@@ -1,11 +1,11 @@
 import React from 'react';
-import App from "./App";
+import OfferCard from "./OfferCard";
 import renderer from 'react-test-renderer';
 
-it(`App correctly renders after relaunch`, () => {
-  const offers = [{
-    id: 99,
-    title: `123 123 123`,
+it(`OfferCard correctly renders after relaunch`, () => {
+  const card = {
+    id: 33,
+    title: `bla bla bla`,
     isPremium: true,
     previewImage: `img/apartment-03.jpg`,
     price: 333,
@@ -24,9 +24,12 @@ it(`App correctly renders after relaunch`, () => {
     },
     description: `111A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
 
-  }];
-  const tree = renderer.create(<App
-    offers = {offers}
+  };
+  const tree = renderer.create(<OfferCard
+    key = {card.id}
+    card = {card}
+    onHover = {() => {}}
+    onCardClick = {() => {}}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

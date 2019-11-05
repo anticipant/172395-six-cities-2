@@ -1,14 +1,22 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from "prop-types";
 
-class OfferCard extends Component {
+class OfferCard extends PureComponent {
   constructor(props) {
     super(props);
     this.onHover = this.onHover.bind(this);
+    this.onCardClick = this.onCardClick.bind(this);
   }
 
   onHover() {
     this.props.onHover(this.props.card);
+  }
+
+  onCardClick(evt) {
+    evt.preventDefault();
+    let path = evt.target.href;
+    window.history.pushState({route: path}, `some title`, path);
+    this.props.onCardClick(this.props.card);
   }
 
   render() {
@@ -17,11 +25,13 @@ class OfferCard extends Component {
     return (
       <article onMouseOver={this.onHover} className="cities__place-card place-card">
         <div className="place-card__mark">
-          <span>{card.mark}</span>
+          {
+            card.isPremium && <span>Premium</span>
+          }
         </div>
         <div className="cities__image-wrapper place-card__image-wrapper">
           <a href="#">
-            <img className="place-card__image" src={card.image} width="260" height="200" alt="Place image"/>
+            <img className="place-card__image" src={card.previewImage} width="260" height="200" alt="Place image"/>
           </a>
         </div>
         <div className="place-card__info">
@@ -45,8 +55,11 @@ class OfferCard extends Component {
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
-          <h2 className="place-card__name">
-            <a href="#">{card.name}</a>
+          <h2
+            className="place-card__name">
+            <a
+              onClick={this.onCardClick}
+              href="/offer">{card.title}</a>
           </h2>
           <p className="place-card__type">{card.type}</p>
         </div>
@@ -57,14 +70,22 @@ class OfferCard extends Component {
 OfferCard.propTypes = {
   card: PropTypes.shape({
     id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    mark: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
+    previewImage: PropTypes.string.isRequired,
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: PropTypes.string.isRequired,
+    isFavorite: PropTypes.bool.isRequired,
+    isPremium: PropTypes.bool.isRequired,
     rating: PropTypes.number.isRequired,
     type: PropTypes.string.isRequired,
+    bedrooms: PropTypes.number.isRequired,
+    maxAdults: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+    goods: PropTypes.array.isRequired,
+    host: PropTypes.object.isRequired,
+    description: PropTypes.string.isRequired,
   }).isRequired,
   onHover: PropTypes.func.isRequired,
+  onCardClick: PropTypes.func.isRequired,
 };
 
 export default OfferCard;

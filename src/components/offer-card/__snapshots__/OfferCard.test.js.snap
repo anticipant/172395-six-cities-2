@@ -9,7 +9,7 @@ exports[`OfferCard correctly renders after relaunch 1`] = `
     className="place-card__mark"
   >
     <span>
-      Premium 33
+      Premium
     </span>
   </div>
   <div
@@ -92,7 +92,8 @@ exports[`OfferCard correctly renders after relaunch 1`] = `
       className="place-card__name"
     >
       <a
-        href="#"
+        href="/offer"
+        onClick={[Function]}
       >
         bla bla bla
       </a>
