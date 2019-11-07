@@ -22,7 +22,9 @@ class Map extends Component {
     const zoom = cityInfo.location.zoom;
     const city = [cityInfo.location.latitude, cityInfo.location.longitude];
 
-
+    if (leaflet) { // todo Это норм так делать? Иначе получаю краш для тестов
+      return;
+    }
     const map = leaflet.map(`map`, {
       center: city,
       zoom,

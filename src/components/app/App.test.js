@@ -5,6 +5,14 @@ import renderer from 'react-test-renderer';
 it(`App correctly renders after relaunch`, () => {
   const offers = [{
     id: 99,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 33,
+        longitude: 33,
+        zoom: 33
+      }
+    },
     title: `123 123 123`,
     isPremium: true,
     previewImage: `img/apartment-03.jpg`,
@@ -23,6 +31,11 @@ it(`App correctly renders after relaunch`, () => {
       avatarUrl: `img/1.png`
     },
     description: `111A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 333222,
+      longitude: 3322,
+      zoom: 33322
+    },
 
   }];
   const tree = renderer.create(<App

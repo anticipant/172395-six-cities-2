@@ -1,10 +1,19 @@
 import React from 'react';
 import SuggestionList from "./SuggestionList";
 import renderer from 'react-test-renderer';
+import Map from "../map/Map";
 
 it(`SuggestionList correctly renders after relaunch`, () => {
   const offers = [{
     id: 565,
+    city: {
+      name: `Amsterdam2`,
+      location: {
+        latitude: 12123123,
+        longitude: 1111,
+        zoom: 1220
+      }
+    },
     title: `lorem imp`,
     isPremium: true,
     previewImage: `img/apartment-0555.jpg`,
@@ -23,11 +32,18 @@ it(`SuggestionList correctly renders after relaunch`, () => {
       avatarUrl: `img/12.png`
     },
     description: `22111A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 111111111,
+      longitude: 22222,
+      zoom: 3333
+    },
 
   }];
   const tree = renderer.create(<SuggestionList
     cards={offers}
     onCardClick={() => {}}
-  />).toJSON();
+  >
+    <Map name={`Amsterdam2`} offers={offers}/>
+  </SuggestionList>).toJSON();
   expect(tree).toMatchSnapshot();
 });
