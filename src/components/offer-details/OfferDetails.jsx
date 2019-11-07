@@ -27,15 +27,15 @@ class OfferDetails extends PureComponent {
             </div>
             <div className="property__container container">
               <div className="property__wrapper">
-                <div className="property__mark">
-                  <span>Premium</span>
-                </div>
+                {
+                  card.isPremium && <div className="property__mark"><span>Premium</span></div>
+                }
                 <div className="property__name-wrapper">
                   <h1 className="property__name">
                     {card.title}
                   </h1>
-                  <button className="property__bookmark-button button" type="button">
-                    <svg className="property__bookmark-icon" width="31" height="33">
+                  <button className={`place-card__bookmark-button button ${card.isFavorite ? `place-card__bookmark-button--active` : ``}`} type="button">
+                    <svg className="place-card__bookmark-icon" width="31" height="33">
                       <use xlinkHref="#icon-bookmark"></use>
                     </svg>
                     <span className="visually-hidden">To bookmarks</span>
@@ -329,7 +329,7 @@ OfferDetails.propTypes = {
     bedrooms: PropTypes.number.isRequired,
     maxAdults: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired,
-    goods: PropTypes.array.isRequired,
+    goods: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
     host: PropTypes.object.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,

@@ -15,8 +15,9 @@ const getPageScreen = (props) => {
       />;
     case `/offer`:
       return selectedCard ? <OfferDetails card={selectedCard}/> : null;
+    default:
+      return null;
   }
-  return null;
 };
 
 
