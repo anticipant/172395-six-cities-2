@@ -19,6 +19,11 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 8
+    },
   },
   {
     id: 2,
@@ -40,6 +45,11 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A2 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
+      zoom: 8
+    },
   },
   {
     id: 3,
@@ -61,6 +71,11 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A3 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 8
+    },
   },
   {
     id: 4,
@@ -82,6 +97,11 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A4 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 8
+    },
   },
 ];
 
