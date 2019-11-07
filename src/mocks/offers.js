@@ -1,6 +1,14 @@
 const offers = [
   {
     id: 1,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Beautiful & luxurious studio at great location`,
@@ -27,6 +35,14 @@ const offers = [
   },
   {
     id: 2,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
@@ -53,6 +69,14 @@ const offers = [
   },
   {
     id: 3,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
@@ -79,6 +103,14 @@ const offers = [
   },
   {
     id: 4,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
