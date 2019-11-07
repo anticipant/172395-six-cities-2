@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 
 import SuggestionList from "../suggestion-list/SuggestionList";
 import OfferDetails from "../offer-details/OfferDetails";
+import Map from "../map/Map";
 
 const getPageScreen = (props) => {
   const {offers, selectedCard, cardClickHandler} = props;
 
   switch (location.pathname) {
     case `/`:
-      return <SuggestionList
-        cards = {offers}
-        onCardClick = {cardClickHandler}
-      />;
+      return (
+        <SuggestionList
+          cards = {offers}
+          onCardClick = {cardClickHandler}
+        >
+          <Map name={`Amsterdam`} offers={offers}/>
+        </SuggestionList>
+      );
     case `/offer`:
       return selectedCard ? <OfferDetails card={selectedCard}/> : null;
     default:
