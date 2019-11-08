@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-class Map extends Component {
+class Map extends PureComponent {
   constructor(props) {
     super(props);
     this.LAYER_URL = `https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png`;

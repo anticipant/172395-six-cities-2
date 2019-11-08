@@ -1,4 +1,4 @@
-import React, {Fragment, Component} from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
 import SuggestionList from "../suggestion-list/SuggestionList";
@@ -34,7 +34,7 @@ getPageScreen.propTypes = {
 };
 
 
-class App extends Component {
+class App extends PureComponent {
 
   constructor(props) {
     super(props);

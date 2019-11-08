@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import OfferCard from "../offer-card/OfferCard";
 import Header from "../header/Header";
 
-class SuggestionList extends React.Component {
+class SuggestionList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
