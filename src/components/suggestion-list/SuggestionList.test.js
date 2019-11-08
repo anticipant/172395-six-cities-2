@@ -39,11 +39,25 @@ it(`SuggestionList correctly renders after relaunch`, () => {
     },
 
   }];
+  const leaflet = {
+    icon: () => {},
+    map: () => ({
+      setView: () => {},
+      addTo: () => {},
+    }),
+    tileLayer: () => ({
+      addTo: () => {},
+    }),
+    marker: () => ({
+      addTo: () => {},
+    }),
+
+  };
   const tree = renderer.create(<SuggestionList
     cards={offers}
     onCardClick={() => {}}
   >
-    <Map name={`Amsterdam2`} offers={offers}/>
+    <Map name={`Amsterdam2`} offers={offers} leaflet={leaflet}/>
   </SuggestionList>).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -38,8 +38,23 @@ it(`App correctly renders after relaunch`, () => {
     },
 
   }];
+  const leaflet = {
+    icon: () => {},
+    map: () => ({
+      setView: () => {},
+      addTo: () => {},
+    }),
+    tileLayer: () => ({
+      addTo: () => {},
+    }),
+    marker: () => ({
+      addTo: () => {},
+    }),
+
+  };
   const tree = renderer.create(<App
     offers = {offers}
+    leaflet = {leaflet}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

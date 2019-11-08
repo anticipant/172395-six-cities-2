@@ -1,7 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 import Map from "./Map";
-import leaflet from 'leaflet';
 
 it(`App correctly renders after relaunch`, () => {
   const offers = [{
@@ -39,6 +38,20 @@ it(`App correctly renders after relaunch`, () => {
     },
 
   }];
+  const leaflet = {
+    icon: () => {},
+    map: () => ({
+      setView: () => {},
+      addTo: () => {},
+    }),
+    tileLayer: () => ({
+      addTo: () => {},
+    }),
+    marker: () => ({
+      addTo: () => {},
+    }),
+
+  };
   const tree = renderer.create(<Map name={`Amsterdam12`} offers={offers} leaflet={leaflet}/>).toJSON();
   expect(tree).toMatchSnapshot();
 });
