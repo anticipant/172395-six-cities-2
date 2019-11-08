@@ -244,7 +244,7 @@ exports[`App correctly renders after relaunch 1`] = `
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-03.jpg"
+                    src="img/apartment-6723.jpg"
                     width="260"
                   />
                 </a>
@@ -262,7 +262,7 @@ exports[`App correctly renders after relaunch 1`] = `
                       className="place-card__price-value"
                     >
                       €
-                      333
+                      6723
                     </b>
                     <span
                       className="place-card__price-text"
@@ -299,7 +299,7 @@ exports[`App correctly renders after relaunch 1`] = `
                     <span
                       style={
                         Object {
-                          "width": "33%",
+                          "width": "6723%",
                         }
                       }
                     />
@@ -317,7 +317,7 @@ exports[`App correctly renders after relaunch 1`] = `
                     href="/offer"
                     onClick={[Function]}
                   >
-                    123 123 123
+                    Title-Amsterdam
                   </a>
                 </h2>
                 <p

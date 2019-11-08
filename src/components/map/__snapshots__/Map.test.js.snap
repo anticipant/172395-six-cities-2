@@ -10,3 +10,14 @@ exports[`App correctly renders after relaunch 1`] = `
   }
 />
 `;
+
+exports[`Map correctly renders after relaunch 1`] = `
+<div
+  id="map"
+  style={
+    Object {
+      "width": "100%",
+    }
+  }
+/>
+`;
