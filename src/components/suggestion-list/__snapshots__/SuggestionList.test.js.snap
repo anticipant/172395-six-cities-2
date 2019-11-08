@@ -228,13 +228,6 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
               onMouseOver={[Function]}
             >
               <div
-                className="place-card__mark"
-              >
-                <span>
-                  Premium
-                </span>
-              </div>
-              <div
                 className="cities__image-wrapper place-card__image-wrapper"
               >
                 <a
@@ -244,7 +237,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-0555.jpg"
+                    src="img/apartment-543.jpg"
                     width="260"
                   />
                 </a>
@@ -262,7 +255,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                       className="place-card__price-value"
                     >
                       €
-                      331232133
+                      543
                     </b>
                     <span
                       className="place-card__price-text"
@@ -271,7 +264,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     </span>
                   </div>
                   <button
-                    className="place-card__bookmark-button button"
+                    className="place-card__bookmark-button button place-card__bookmark-button--active"
                     type="button"
                   >
                     <svg
@@ -299,7 +292,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     <span
                       style={
                         Object {
-                          "width": "123213%",
+                          "width": "543%",
                         }
                       }
                     />
@@ -317,13 +310,13 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     href="/offer"
                     onClick={[Function]}
                   >
-                    lorem imp
+                    Title-SuggestionList
                   </a>
                 </h2>
                 <p
                   className="place-card__type"
                 >
-                  Apartment 31232132
+                  Apartment 3
                 </p>
               </div>
             </article>
@@ -332,8 +325,13 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
         <div
           className="cities__right-section"
         >
-          <section
-            className="cities__map map"
+          <div
+            id="map"
+            style={
+              Object {
+                "width": "100%",
+              }
+            }
           />
         </div>
       </div>

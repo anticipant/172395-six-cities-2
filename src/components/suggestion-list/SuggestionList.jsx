@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 import OfferCard from "../offer-card/OfferCard";
 import Header from "../header/Header";
 
-class SuggestionList extends React.Component {
+class SuggestionList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -97,7 +97,7 @@ class SuggestionList extends React.Component {
                 </div>
               </section>
               <div className="cities__right-section">
-                <section className="cities__map map"></section>
+                {this.props.children}
               </div>
             </div>
           </div>
@@ -110,6 +110,7 @@ class SuggestionList extends React.Component {
 SuggestionList.propTypes = {
   cards: PropTypes.array.isRequired,
   onCardClick: PropTypes.func.isRequired,
+  children: PropTypes.element,
 };
 
 export default SuggestionList;

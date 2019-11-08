@@ -1,22 +1,28 @@
-import React, {Fragment, Component} from 'react';
+import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
 import SuggestionList from "../suggestion-list/SuggestionList";
 import OfferDetails from "../offer-details/OfferDetails";
+import Map from "../map/Map";
 
 const getPageScreen = (props) => {
-  const {offers, selectedCard, cardClickHandler} = props;
+  const {offers, selectedCard, cardClickHandler, leaflet} = props;
 
   switch (location.pathname) {
     case `/`:
-      return <SuggestionList
-        cards = {offers}
-        onCardClick = {cardClickHandler}
-      />;
+      return (
+        <SuggestionList
+          cards = {offers}
+          onCardClick = {cardClickHandler}
+        >
+          <Map name={`Amsterdam`} offers={offers} leaflet={leaflet}/>
+        </SuggestionList>
+      );
     case `/offer`:
       return selectedCard ? <OfferDetails card={selectedCard}/> : null;
+    default:
+      return null;
   }
-  return null;
 };
 
 
@@ -24,10 +30,11 @@ getPageScreen.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.object).isRequired,
   selectedCard: PropTypes.object,
   cardClickHandler: PropTypes.func,
+  leaflet: PropTypes.object,
 };
 
 
-class App extends Component {
+class App extends PureComponent {
 
   constructor(props) {
     super(props);
@@ -47,6 +54,7 @@ class App extends Component {
         {
           getPageScreen({
             offers: this.props.offers,
+            leaflet: this.props.leaflet,
             cardClickHandler: this.cardClickHandler,
             selectedCard: this.state.selectedCard,
           })
@@ -58,6 +66,7 @@ class App extends Component {
 
 App.propTypes = {
   offers: PropTypes.arrayOf(PropTypes.object).isRequired,
+  leaflet: PropTypes.object,
 };
 
 export default App;
