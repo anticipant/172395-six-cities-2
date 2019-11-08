@@ -78,7 +78,7 @@ OfferCard.propTypes = {
     bedrooms: PropTypes.number.isRequired,
     maxAdults: PropTypes.number.isRequired,
     price: PropTypes.number.isRequired,
-    goods: PropTypes.arrayOf(PropTypes.string.isRequired).isRequired,
+    goods: PropTypes.arrayOf(PropTypes.string.isRequired),
     host: PropTypes.object.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
