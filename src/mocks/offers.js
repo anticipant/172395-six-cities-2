@@ -1,11 +1,19 @@
-const offers = [
+export const offers = [
   {
     id: 1,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Beautiful & luxurious studio at great location`,
-    isFavorite: false,
-    isPremium: false,
+    isFavorite: true,
+    isPremium: true,
     rating: 4.8,
     type: `apartment`,
     bedrooms: 3,
@@ -19,14 +27,27 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.85309666406198,
+      zoom: 8
+    },
   },
   {
     id: 2,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
     isFavorite: false,
-    isPremium: false,
+    isPremium: true,
     rating: 20,
     type: `apartment`,
     bedrooms: 3,
@@ -40,9 +61,22 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A2 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.369553943508,
+      longitude: 4.85309666406198,
+      zoom: 8
+    },
   },
   {
     id: 3,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
@@ -61,9 +95,22 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A3 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3909553943508,
+      longitude: 4.929309666406198,
+      zoom: 8
+    },
   },
   {
     id: 4,
+    city: {
+      name: `Amsterdam`,
+      location: {
+        latitude: 52.38333,
+        longitude: 4.9,
+        zoom: 10
+      }
+    },
     previewImage: `img/apartment-01.jpg`,
     images: [`img/apartment-01.jpg`, `img/apartment-02.jpg`],
     title: `Wood and stone place`,
@@ -82,7 +129,10 @@ const offers = [
       avatarUrl: `img/avatar-angelina.jpg`
     },
     description: `A4 quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.`,
+    location: {
+      latitude: 52.3809553943508,
+      longitude: 4.939309666406198,
+      zoom: 8
+    },
   },
 ];
-
-export default offers;
