@@ -1,19 +1,25 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+import ReviewsItem from "../reviews-item/ReviewsItem";
 
 class ReviewsList extends PureComponent {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
-    const {reviews} = this.props;
     return (
       <ul className="reviews__list">
-        {reviews.map((it) => it)}
+        {
+          this.props.children.map((it) => <ReviewsItem key={it.id} review={it}/>)
+        }
       </ul>
     );
   }
 }
 
 ReviewsList.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  children: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ReviewsList;

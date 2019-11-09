@@ -14,12 +14,15 @@ exports[`ReviewsItem correctly renders after relaunch 1`] = `
         alt="Reviews avatar"
         className="reviews__avatar user__avatar"
         height="54"
+        src="img/ReviewsItem.jpg"
         width="54"
       />
     </div>
     <span
       className="reviews__user-name"
-    />
+    >
+      ReviewsItem
+    </span>
   </div>
   <div
     className="reviews__info"
