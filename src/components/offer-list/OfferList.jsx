@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import OfferCard from "../offer-card/OfferCard";
 import Header from "../header/Header";
 
-class SuggestionList extends PureComponent {
+class OfferList extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

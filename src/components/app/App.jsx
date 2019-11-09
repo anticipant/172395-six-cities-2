@@ -1,7 +1,7 @@
 import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-import SuggestionList from "../suggestion-list/SuggestionList";
+import OfferList from "../offer-list/OfferList";
 import OfferDetails from "../offer-details/OfferDetails";
 import Map from "../map/Map";
 
@@ -11,12 +11,12 @@ const getPageScreen = (props) => {
   switch (location.pathname) {
     case `/`:
       return (
-        <SuggestionList
+        <OfferList
           cards = {offers}
           onCardClick = {cardClickHandler}
         >
           <Map name={`Amsterdam`} offers={offers} leaflet={leaflet}/>
-        </SuggestionList>
+        </OfferList>
       );
     case `/offer`:
       return selectedCard ? <OfferDetails card={selectedCard}/> : null;
