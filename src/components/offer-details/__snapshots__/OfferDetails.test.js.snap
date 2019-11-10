@@ -566,8 +566,18 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
         </div>
       </div>
       <section
-        className="property__map map"
-      />
+        className="container"
+      >
+        <div
+          id="map"
+          style={
+            Object {
+              "height": undefined,
+              "width": "100%",
+            }
+          }
+        />
+      </section>
     </section>
     <div
       className="container"
@@ -585,6 +595,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
         >
           <article
             className="near-places__card place-card"
+            onMouseOver={[Function]}
           >
             <div
               className="near-places__image-wrapper place-card__image-wrapper"
@@ -596,7 +607,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   alt="Place image"
                   className="place-card__image"
                   height="200"
-                  src="img/room.jpg"
+                  src="img/apartment-222.jpg"
                   width="260"
                 />
               </a>
@@ -613,7 +624,8 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   <b
                     className="place-card__price-value"
                   >
-                    €80
+                    €
+                    222
                   </b>
                   <span
                     className="place-card__price-text"
@@ -622,101 +634,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   </span>
                 </div>
                 <button
-                  className="place-card__bookmark-button place-card__bookmark-button--active button"
-                  type="button"
-                >
-                  <svg
-                    className="place-card__bookmark-icon"
-                    height="19"
-                    width="18"
-                  >
-                    <use
-                      xlinkHref="#icon-bookmark"
-                    />
-                  </svg>
-                  <span
-                    className="visually-hidden"
-                  >
-                    In bookmarks
-                  </span>
-                </button>
-              </div>
-              <div
-                className="place-card__rating rating"
-              >
-                <div
-                  className="place-card__stars rating__stars"
-                >
-                  <span
-                    style={
-                      Object {
-                        "width": "98%",
-                      }
-                    }
-                  />
-                  <span
-                    className="visually-hidden"
-                  >
-                    Rating
-                  </span>
-                </div>
-              </div>
-              <h2
-                className="place-card__name"
-              >
-                <a
-                  href="#"
-                >
-                  Wood and stone place
-                </a>
-              </h2>
-              <p
-                className="place-card__type"
-              >
-                Private room
-              </p>
-            </div>
-          </article>
-          <article
-            className="near-places__card place-card"
-          >
-            <div
-              className="near-places__image-wrapper place-card__image-wrapper"
-            >
-              <a
-                href="#"
-              >
-                <img
-                  alt="Place image"
-                  className="place-card__image"
-                  height="200"
-                  src="img/apartment-02.jpg"
-                  width="260"
-                />
-              </a>
-            </div>
-            <div
-              className="place-card__info"
-            >
-              <div
-                className="place-card__price-wrapper"
-              >
-                <div
-                  className="place-card__price"
-                >
-                  <b
-                    className="place-card__price-value"
-                  >
-                    €132
-                  </b>
-                  <span
-                    className="place-card__price-text"
-                  >
-                    / night
-                  </span>
-                </div>
-                <button
-                  className="place-card__bookmark-button button"
+                  className="place-card__bookmark-button button place-card__bookmark-button--active"
                   type="button"
                 >
                   <svg
@@ -744,7 +662,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   <span
                     style={
                       Object {
-                        "width": "98%",
+                        "width": "222%",
                       }
                     }
                   />
@@ -759,20 +677,22 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                 className="place-card__name"
               >
                 <a
-                  href="#"
+                  href="/offer"
+                  onClick={[Function]}
                 >
-                  Canal View Prinsengracht
+                  Title-OfferDetails snap item
                 </a>
               </h2>
               <p
                 className="place-card__type"
               >
-                Apartment
+                Apartment 3
               </p>
             </div>
           </article>
           <article
             className="near-places__card place-card"
+            onMouseOver={[Function]}
           >
             <div
               className="near-places__image-wrapper place-card__image-wrapper"
@@ -784,7 +704,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   alt="Place image"
                   className="place-card__image"
                   height="200"
-                  src="img/apartment-03.jpg"
+                  src="img/apartment-223.jpg"
                   width="260"
                 />
               </a>
@@ -801,7 +721,8 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   <b
                     className="place-card__price-value"
                   >
-                    €180
+                    €
+                    223
                   </b>
                   <span
                     className="place-card__price-text"
@@ -810,7 +731,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   </span>
                 </div>
                 <button
-                  className="place-card__bookmark-button button"
+                  className="place-card__bookmark-button button place-card__bookmark-button--active"
                   type="button"
                 >
                   <svg
@@ -838,7 +759,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                   <span
                     style={
                       Object {
-                        "width": "10%",
+                        "width": "223%",
                       }
                     }
                   />
@@ -853,15 +774,113 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
                 className="place-card__name"
               >
                 <a
-                  href="#"
+                  href="/offer"
+                  onClick={[Function]}
                 >
-                  Nice, cozy, warm big bed apartment
+                  Title-OfferDetails snap item
                 </a>
               </h2>
               <p
                 className="place-card__type"
               >
-                Apartment
+                Apartment 3
+              </p>
+            </div>
+          </article>
+          <article
+            className="near-places__card place-card"
+            onMouseOver={[Function]}
+          >
+            <div
+              className="near-places__image-wrapper place-card__image-wrapper"
+            >
+              <a
+                href="#"
+              >
+                <img
+                  alt="Place image"
+                  className="place-card__image"
+                  height="200"
+                  src="img/apartment-224.jpg"
+                  width="260"
+                />
+              </a>
+            </div>
+            <div
+              className="place-card__info"
+            >
+              <div
+                className="place-card__price-wrapper"
+              >
+                <div
+                  className="place-card__price"
+                >
+                  <b
+                    className="place-card__price-value"
+                  >
+                    €
+                    224
+                  </b>
+                  <span
+                    className="place-card__price-text"
+                  >
+                    / night
+                  </span>
+                </div>
+                <button
+                  className="place-card__bookmark-button button place-card__bookmark-button--active"
+                  type="button"
+                >
+                  <svg
+                    className="place-card__bookmark-icon"
+                    height="19"
+                    width="18"
+                  >
+                    <use
+                      xlinkHref="#icon-bookmark"
+                    />
+                  </svg>
+                  <span
+                    className="visually-hidden"
+                  >
+                    To bookmarks
+                  </span>
+                </button>
+              </div>
+              <div
+                className="place-card__rating rating"
+              >
+                <div
+                  className="place-card__stars rating__stars"
+                >
+                  <span
+                    style={
+                      Object {
+                        "width": "224%",
+                      }
+                    }
+                  />
+                  <span
+                    className="visually-hidden"
+                  >
+                    Rating
+                  </span>
+                </div>
+              </div>
+              <h2
+                className="place-card__name"
+              >
+                <a
+                  href="/offer"
+                  onClick={[Function]}
+                >
+                  Title-OfferDetails snap item
+                </a>
+              </h2>
+              <p
+                className="place-card__type"
+              >
+                Apartment 3
               </p>
             </div>
           </article>
