@@ -10,6 +10,7 @@ it(`OfferCard correctly renders after relaunch`, () => {
     card = {card}
     onHover = {() => {}}
     onCardClick = {() => {}}
+    blockClassName={`near-places`}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -20,14 +20,15 @@ class OfferCard extends PureComponent {
   }
 
   render() {
-    const {card} = this.props;
+    const {card, blockClassName} = this.props;
+    const isMainPageClass = blockClassName === `cities`;
 
     return (
-      <article onMouseOver={this.onHover} className="cities__place-card place-card">
+      <article onMouseOver={this.onHover} className={`${isMainPageClass ? `cities__place-card` : `near-places__card`} place-card`}>
         {
           card.isPremium && <div className="place-card__mark"><span>Premium</span></div>
         }
-        <div className="cities__image-wrapper place-card__image-wrapper">
+        <div className={`${isMainPageClass ? `cities__image-wrapper` : `near-places__image-wrapper`} place-card__image-wrapper`}>
           <a href="#">
             <img className="place-card__image" src={card.previewImage} width="260" height="200" alt="Place image"/>
           </a>
@@ -40,7 +41,7 @@ class OfferCard extends PureComponent {
             </div>
             <button className={`place-card__bookmark-button button ${card.isFavorite ? `place-card__bookmark-button--active` : ``}`} type="button">
               <svg className="place-card__bookmark-icon" width="18" height="19">
-                <use xlinkHref="#icon-bookmark"></use>
+                <use xlinkHref="#icon-bookmark"/>
               </svg>
               <span className="visually-hidden">To bookmarks</span>
             </button>
@@ -49,7 +50,7 @@ class OfferCard extends PureComponent {
             <div className="place-card__stars rating__stars">
               <span style={{
                 width: `${card.rating}%`,
-              }}></span>
+              }}/>
               <span className="visually-hidden">Rating</span>
             </div>
           </div>
@@ -82,6 +83,7 @@ OfferCard.propTypes = {
     host: PropTypes.object.isRequired,
     description: PropTypes.string.isRequired,
   }).isRequired,
+  blockClassName: PropTypes.string.isRequired,
   onHover: PropTypes.func.isRequired,
   onCardClick: PropTypes.func.isRequired,
 };

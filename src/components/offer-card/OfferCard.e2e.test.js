@@ -16,6 +16,7 @@ describe(`what handler return`, () => {
       key = { offer.id }
       onHover = { handler }
       onCardClick = { () => {} }
+      blockClassName={`cities`}
     />);
     const card = tree.find(`.cities__place-card`);
     card.simulate(`mouseover`);
@@ -31,6 +32,7 @@ describe(`what handler return`, () => {
       key = { offer.id }
       onHover = { handler }
       onCardClick = { handler }
+      blockClassName={`xxx`}
     />);
     const title = tree.find(`.place-card__name a`);
     title.simulate(`click`);
