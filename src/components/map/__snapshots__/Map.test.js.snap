@@ -5,6 +5,7 @@ exports[`Map correctly renders after relaunch 1`] = `
   id="map"
   style={
     Object {
+      "height": undefined,
       "width": "100%",
     }
   }
