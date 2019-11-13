@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import App from "./App";
+import App from "./app";
 import {getTestCard} from "../../mocks/get-test-card";
 import {leaflet} from "../../mocks/leaflet";
 

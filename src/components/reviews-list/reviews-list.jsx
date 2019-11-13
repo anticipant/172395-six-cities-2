@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import ReviewsItem from "../reviews-item/ReviewsItem";
+import ReviewsItem from "../reviews-item/reviews-item";
 
 class ReviewsList extends PureComponent {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Map from "./Map";
+import Map from "./map";
 import {leaflet} from "../../mocks/leaflet";
 import {getTestCard} from "../../mocks/get-test-card";
 

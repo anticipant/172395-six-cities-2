@@ -1,5 +1,5 @@
 import React from 'react';
-import OfferList from "./OfferList";
+import OfferList from "./offer-list";
 import renderer from 'react-test-renderer';
 import {getTestCard} from "../../mocks/get-test-card";
 

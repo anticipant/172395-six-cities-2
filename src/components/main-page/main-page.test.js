@@ -1,7 +1,7 @@
 import React from 'react';
-import MainPage from "./MainPage";
+import MainPage from "./main-page";
 import renderer from 'react-test-renderer';
-import Map from "../map/Map";
+import Map from "../map/map";
 import {leaflet} from "../../mocks/leaflet";
 import {getTestCard} from "../../mocks/get-test-card";
 

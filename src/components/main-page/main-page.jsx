@@ -1,7 +1,7 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import Header from "../header/Header";
-import OfferList from "../offer-list/OfferList";
+import Header from "../header/header";
+import OfferList from "../offer-list/offer-list";
 
 class MainPage extends PureComponent {
   constructor(props) {

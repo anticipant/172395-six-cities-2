@@ -1,9 +1,9 @@
 import React, {PureComponent} from 'react';
-import Header from "../header/Header";
+import Header from "../header/header";
 import PropTypes from "prop-types";
-import ReviewsList from "../reviews-list/ReviewsList";
+import ReviewsList from "../reviews-list/reviews-list";
 import {reviews} from '../../mocks/reviews';
-import OfferList from "../offer-list/OfferList";
+import OfferList from "../offer-list/offer-list";
 
 class OfferDetails extends PureComponent {
   render() {

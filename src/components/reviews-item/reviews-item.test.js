@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import ReviewsItem from "./ReviewsItem";
+import ReviewsItem from "./reviews-item";
 import {getTestReview} from "../../mocks/get-test-review";
 
 it(`ReviewsItem correctly renders after relaunch`, () => {
