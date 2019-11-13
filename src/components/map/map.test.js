@@ -1,8 +1,9 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Map from "./map";
-import {leaflet} from "../../mocks/leaflet";
+
 import {getTestCard} from "../../mocks/get-test-card";
+import {leaflet} from "../../mocks/leaflet";
+import Map from "./map";
 
 it(`Map correctly renders after relaunch`, () => {
   const offers = [getTestCard(`Map snapshot`, 888, true)];

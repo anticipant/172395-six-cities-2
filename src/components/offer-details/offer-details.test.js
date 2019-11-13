@@ -1,9 +1,10 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
+
 import {getTestCard} from "../../mocks/get-test-card";
-import OfferDetails from "./offer-details";
 import {leaflet} from "../../mocks/leaflet";
 import Map from "../map/map";
+import OfferDetails from "./offer-details";
 
 it(`OfferDetails correctly renders after relaunch`, () => {
   const card = getTestCard(`OfferDetails snap 2`, 999, false);

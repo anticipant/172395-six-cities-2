@@ -1,9 +1,10 @@
+import leaflet from 'leaflet';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import leaflet from 'leaflet';
-import {offers} from "./mocks/offers";
-import {nearbyOffers} from "./mocks/nearby-offers";
+
 import App from "./components/app/app";
+import {nearbyOffers} from "./mocks/nearby-offers";
+import {offers} from "./mocks/offers";
 
 const init = () => {
 

@@ -1,5 +1,6 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
+
 import Header from "../header/header";
 import OfferList from "../offer-list/offer-list";
 

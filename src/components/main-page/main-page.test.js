@@ -1,9 +1,10 @@
 import React from 'react';
-import MainPage from "./main-page";
 import renderer from 'react-test-renderer';
-import Map from "../map/map";
-import {leaflet} from "../../mocks/leaflet";
+
 import {getTestCard} from "../../mocks/get-test-card";
+import {leaflet} from "../../mocks/leaflet";
+import MainPage from "./main-page";
+import Map from "../map/map";
 
 it(`MainPage correctly renders after relaunch`, () => {
   const offers = [getTestCard(`MainPage`, 999, false)];

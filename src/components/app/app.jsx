@@ -1,9 +1,9 @@
 import React, {Fragment, PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
-import OfferDetails from "../offer-details/offer-details";
 import Map from "../map/map";
 import MainPage from "../main-page/main-page";
+import OfferDetails from "../offer-details/offer-details";
 
 const getPageScreen = (props) => {
   const {offers, nearbyOffers, selectedCard, cardClickHandler, leaflet} = props;

@@ -21,14 +21,15 @@ class OfferCard extends PureComponent {
 
   render() {
     const {card, blockClassName} = this.props;
-    const isMainPageClass = blockClassName === `cities`;
 
     return (
-      <article onMouseOver={this.onHover} className={`${isMainPageClass ? `cities__place-card` : `near-places__card`} place-card`}>
+      <article
+        onMouseOver={this.onHover}
+        className={`${blockClassName === `cities` ? `cities__place-card` : `near-places__card`} place-card`}>
         {
           card.isPremium && <div className="place-card__mark"><span>Premium</span></div>
         }
-        <div className={`${isMainPageClass ? `cities__image-wrapper` : `near-places__image-wrapper`} place-card__image-wrapper`}>
+        <div className={`${blockClassName}__image-wrapper place-card__image-wrapper`}>
           <a href="#">
             <img className="place-card__image" src={card.previewImage} width="260" height="200" alt="Place image"/>
           </a>

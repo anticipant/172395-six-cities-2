@@ -1,8 +1,9 @@
 import React from 'react';
 import Enzyme, {mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import OfferCard from "./offer-card";
+
 import {getTestCard} from "../../mocks/get-test-card";
+import OfferCard from "./offer-card";
 
 Enzyme.configure({adapter: new Adapter()});
 
