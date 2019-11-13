@@ -1,27 +1,18 @@
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
-import OfferCard from "../offer-card/OfferCard";
-import Header from "../header/Header";
 
-class SuggestionList extends PureComponent {
+import Header from "../header/header";
+import Map from "../map/map";
+import OfferList from "../offer-list/offer-list";
+
+class MainPage extends PureComponent {
   constructor(props) {
     super(props);
-    this.state = {
-      activeCard: 1,
-    };
-    this.hoverCardHandler = this.hoverCardHandler.bind(this);
-  }
-
-  hoverCardHandler(card) {
-    if (this.state.activeCard !== card.id) {
-      this.setState({
-        activeCard: card.id,
-      });
-    }
   }
 
   render() {
-    const {cards} = this.props;
+    const {cards, name, onCardClick, leaflet} = this.props;
+
     return (
       <div className="page page--gray page--main">
         <Header isMainPage={true}/>
@@ -68,7 +59,7 @@ class SuggestionList extends PureComponent {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">312 places to stay in Amsterdam</b>
+                <b className="places__found">{cards.length} places to stay in {name}</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption"
                   >Sort by</span>
@@ -87,17 +78,20 @@ class SuggestionList extends PureComponent {
                 </form>
                 <div className="cities__places-list places__list tabs__content">
 
-                  {cards.map((it) => <OfferCard
-                    key = {it.id}
-                    card = {it}
-                    onHover = {this.hoverCardHandler}
-                    onCardClick = {this.props.onCardClick}
-                  />)}
+                  <OfferList
+                    blockClassName={`cities`}
+                    cards = {cards}
+                    onCardClick = {onCardClick}
+                  />
 
                 </div>
               </section>
               <div className="cities__right-section">
-                {this.props.children}
+                <Map
+                  name = {name}
+                  offers = {cards}
+                  leaflet = {leaflet}
+                />
               </div>
             </div>
           </div>
@@ -107,10 +101,11 @@ class SuggestionList extends PureComponent {
   }
 }
 
-SuggestionList.propTypes = {
-  cards: PropTypes.array.isRequired,
+MainPage.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
+  name: PropTypes.string.isRequired,
   onCardClick: PropTypes.func.isRequired,
-  children: PropTypes.element,
+  leaflet: PropTypes.object,
 };
 
-export default SuggestionList;
+export default MainPage;

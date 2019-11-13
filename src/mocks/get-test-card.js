@@ -1,7 +1,7 @@
 export const getTestCard = (name, number, bool) => ({
   id: number,
   city: {
-    name,
+    name: `Amsterdam`,
     location: {
       latitude: number,
       longitude: number,

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SuggestionList correctly renders after relaunch 1`] = `
+exports[`MainPage correctly renders after relaunch 1`] = `
 <div
   className="page page--gray page--main"
 >
@@ -164,7 +164,9 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
           <b
             className="places__found"
           >
-            312 places to stay in Amsterdam
+            1
+             places to stay in 
+            Amsterdam
           </b>
           <form
             action="#"
@@ -237,7 +239,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     alt="Place image"
                     className="place-card__image"
                     height="200"
-                    src="img/apartment-543.jpg"
+                    src="img/apartment-999.jpg"
                     width="260"
                   />
                 </a>
@@ -255,7 +257,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                       className="place-card__price-value"
                     >
                       €
-                      543
+                      999
                     </b>
                     <span
                       className="place-card__price-text"
@@ -292,7 +294,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     <span
                       style={
                         Object {
-                          "width": "543%",
+                          "width": "999%",
                         }
                       }
                     />
@@ -310,7 +312,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
                     href="/offer"
                     onClick={[Function]}
                   >
-                    Title-SuggestionList
+                    Title-MainPage
                   </a>
                 </h2>
                 <p
@@ -329,6 +331,7 @@ exports[`SuggestionList correctly renders after relaunch 1`] = `
             id="map"
             style={
               Object {
+                "height": undefined,
                 "width": "100%",
               }
             }

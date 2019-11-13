@@ -42,11 +42,15 @@ class Map extends PureComponent {
 
   render() {
     return (
-      <div id="map" style={{width: `100%`}}/>
+      <div id="map" style={{
+        width: `100%`,
+        height: this.props.height ? `${this.props.height}px` : undefined,
+      }}/>
     );
   }
 }
 Map.propTypes = {
+  height: PropTypes.number,
   name: PropTypes.string.isRequired,
   offers: PropTypes.arrayOf(PropTypes.object.isRequired).isRequired,
   leaflet: PropTypes.object,

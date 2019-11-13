@@ -1,7 +1,8 @@
 import React from 'react';
-import OfferCard from "./OfferCard";
 import renderer from 'react-test-renderer';
+
 import {getTestCard} from "../../mocks/get-test-card";
+import OfferCard from "./offer-card";
 
 it(`OfferCard correctly renders after relaunch`, () => {
   const card = getTestCard(`OfferCard`, 123321123321, true);
@@ -10,6 +11,7 @@ it(`OfferCard correctly renders after relaunch`, () => {
     card = {card}
     onHover = {() => {}}
     onCardClick = {() => {}}
+    blockClassName={`near-places`}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

@@ -1,9 +1,10 @@
+import leaflet from 'leaflet';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import leaflet from 'leaflet';
-import {offers} from "./mocks/offers";
 
-import App from "./components/app/App";
+import App from "./components/app/app";
+import {nearbyOffers} from "./mocks/nearby-offers";
+import {offers} from "./mocks/offers";
 
 const init = () => {
 
@@ -11,6 +12,7 @@ const init = () => {
       <App
         leaflet = {leaflet}
         offers = {offers}
+        nearbyOffers = {nearbyOffers}
       />,
       document.querySelector(`#root`));
 };
