@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 
 import {getTestCard} from "../../mocks/get-test-card";
 import {leaflet} from "../../mocks/leaflet";
-import Map from "../map/map";
 import OfferDetails from "./offer-details";
 
 it(`OfferDetails correctly renders after relaunch`, () => {
@@ -15,8 +14,7 @@ it(`OfferDetails correctly renders after relaunch`, () => {
     card = {card}
     nearbyOffers={nearbyOffers}
     onCardClick={() => {}}
-  >
-    <Map name={`OfferDetails snap item`} offers={nearbyOffers} leaflet={leaflet}/>
-  </OfferDetails>).toJSON();
+    leaflet = {leaflet}
+  />).toJSON();
   expect(tree).toMatchSnapshot();
 });

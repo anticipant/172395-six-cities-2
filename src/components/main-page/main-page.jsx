@@ -2,6 +2,7 @@ import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
 import Header from "../header/header";
+import Map from "../map/map";
 import OfferList from "../offer-list/offer-list";
 
 class MainPage extends PureComponent {
@@ -10,7 +11,7 @@ class MainPage extends PureComponent {
   }
 
   render() {
-    const {cards, name, onCardClick} = this.props;
+    const {cards, name, onCardClick, leaflet} = this.props;
 
     return (
       <div className="page page--gray page--main">
@@ -86,7 +87,11 @@ class MainPage extends PureComponent {
                 </div>
               </section>
               <div className="cities__right-section">
-                {this.props.children}
+                <Map
+                  name = {name}
+                  offers = {cards}
+                  leaflet = {leaflet}
+                />
               </div>
             </div>
           </div>
@@ -100,7 +105,7 @@ MainPage.propTypes = {
   cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
   onCardClick: PropTypes.func.isRequired,
-  children: PropTypes.element,
+  leaflet: PropTypes.object,
 };
 
 export default MainPage;

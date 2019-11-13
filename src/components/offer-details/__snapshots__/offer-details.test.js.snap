@@ -572,7 +572,7 @@ exports[`OfferDetails correctly renders after relaunch 1`] = `
           id="map"
           style={
             Object {
-              "height": undefined,
+              "height": "500px",
               "width": "100%",
             }
           }

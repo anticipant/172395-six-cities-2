@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 
 import Header from "../header/header";
 import OfferList from "../offer-list/offer-list";
+import Map from "../map/map";
 import ReviewsList from "../reviews-list/reviews-list";
 import {reviews} from '../../mocks/reviews';
 
 class OfferDetails extends PureComponent {
   render() {
-    const {card, children} = this.props;
+    const {card, nearbyOffers, leaflet} = this.props;
+    const HEIGHT_OF_OFFER_DETAILS_MAP = 500;
     return (
       <div className="page">
 
@@ -176,20 +178,25 @@ class OfferDetails extends PureComponent {
             </div>
 
             <section className="container">
-              {children}
+              <Map
+                name = {`Amsterdam`}
+                offers = {nearbyOffers}
+                leaflet = {leaflet}
+                height = {HEIGHT_OF_OFFER_DETAILS_MAP}
+              />
             </section>
 
           </section>
 
           {
-            this.props.nearbyOffers.length !== 0 && <div className="container">
+            nearbyOffers.length !== 0 && <div className="container">
               <section className="near-places places">
                 <h2 className="near-places__title">Other places in the neighbourhood</h2>
                 <div className="near-places__list places__list">
 
                   <OfferList
                     blockClassName={`near-places`}
-                    cards = {this.props.nearbyOffers}
+                    cards = {nearbyOffers}
                     onCardClick = {this.props.onCardClick}
                   />
 
@@ -222,7 +229,7 @@ OfferDetails.propTypes = {
   }).isRequired,
   onCardClick: PropTypes.func.isRequired,
   nearbyOffers: PropTypes.arrayOf(PropTypes.object).isRequired,
-  children: PropTypes.element,
+  leaflet: PropTypes.object,
 };
 
 export default OfferDetails;
