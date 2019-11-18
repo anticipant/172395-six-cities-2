@@ -13,6 +13,7 @@ it(`MainPage correctly renders after relaunch`, () => {
     onCardClick={() => {}}
     name={`Amsterdam`}
     leaflet={leaflet}
+    selectCity={() => {}}
   />).toJSON();
   expect(tree).toMatchSnapshot();
 });

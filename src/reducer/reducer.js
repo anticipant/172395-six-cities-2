@@ -17,7 +17,6 @@ export const reducer = (state = initialState, action) => {
       });
 
     case SET_OFFERS_LIST:
-      console.log(`SET_OFFERS_LIST`, SET_OFFERS_LIST);
       const filteredOffers = state.offers.filter((it) => it.city.name === action.payload);
       return Object.assign({}, state, {
         offersList: filteredOffers,
