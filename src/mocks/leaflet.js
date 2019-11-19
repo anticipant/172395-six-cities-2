@@ -1,4 +1,7 @@
-export const leaflet = {
+import leaflet from 'leaflet';
+const Marker = leaflet.Marker;
+
+export const leafletMock = {
   icon: () => {},
   map: () => ({
     setView: () => {},
@@ -10,4 +13,8 @@ export const leaflet = {
   marker: () => ({
     addTo: () => {},
   }),
+  layerGroup: () => ({
+    addTo: () => {},
+  }),
+  Marker,
 };
