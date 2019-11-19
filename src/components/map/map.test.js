@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 
 import {getTestCard} from "../../mocks/get-test-card";
-import {leaflet} from "../../mocks/leaflet";
+import {leafletMock as leaflet} from "../../mocks/leaflet";
 import Map from "./map";
 
 it(`Map correctly renders after relaunch`, () => {
