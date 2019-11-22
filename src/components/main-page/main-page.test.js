@@ -10,6 +10,7 @@ it(`MainPage correctly renders after relaunch`, () => {
 
   const tree = renderer.create(<MainPage
     cards={offers}
+    cities={[`Amsterdam`]}
     onCardClick={() => {}}
     name={`Amsterdam`}
     leaflet={leaflet}

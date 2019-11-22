@@ -7,21 +7,15 @@ import Map from "../map/map";
 import OfferList from "../offer-list/offer-list";
 import {selectCityAction} from "../../actions/select-city-action";
 import {setOffersListAction} from "../../actions/set-offers-list-action";
+import CityList from "../city-list/CityList";
 
 class MainPage extends PureComponent {
   constructor(props) {
     super(props);
-    this.cityClickHandler = this.cityClickHandler.bind(this);
-    this.cities = [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`];
-  }
-
-  cityClickHandler(evt) {
-    const cityName = evt.currentTarget.querySelector(`span`).innerHTML;
-    this.props.selectCity(cityName);
   }
 
   render() {
-    const {cards, name, onCardClick, leaflet} = this.props;
+    const {cards, cities, name, onCardClick, leaflet, selectCity} = this.props;
 
     return (
       <div className="page page--gray page--main">
@@ -32,22 +26,7 @@ class MainPage extends PureComponent {
           <div className="tabs">
             <section className="locations container">
               <ul className="locations__list tabs__list">
-                {
-                  this.cities.map((it) => {
-
-                    return (
-                      <li
-                        key={`${it}`}
-                        onClick={this.cityClickHandler}
-                        className="locations__item"
-                      >
-                        <a className={`locations__item-link tabs__item ${name === it ? `tabs__item--active` : ``}`} href="#">
-                          <span>{it}</span>
-                        </a>
-                      </li>
-                    );
-                  })
-                }
+                <CityList cities={cities} name={name} selectCity={selectCity}/>
               </ul>
             </section>
           </div>
@@ -98,6 +77,7 @@ class MainPage extends PureComponent {
 }
 
 MainPage.propTypes = {
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
   onCardClick: PropTypes.func.isRequired,
@@ -107,6 +87,7 @@ MainPage.propTypes = {
 
 const mapStateToProps = (state) => ({
   cards: state.offersList,
+  cities: state.cities,
   name: state.activeCity,
 });
 
