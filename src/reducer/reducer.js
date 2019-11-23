@@ -2,7 +2,7 @@ import {offers} from "../mocks/offers";
 import {SELECT_CITY} from "../actions/select-city-action";
 import {SET_OFFERS_LIST} from "../actions/set-offers-list-action";
 
-const initialState = {
+export const initialState = {
   cities: [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`],
   activeCity: `Amsterdam`,
   offers,
@@ -22,6 +22,9 @@ export const reducer = (state = initialState, action) => {
       return Object.assign({}, state, {
         offersList: filteredOffers,
       });
+
+    case `RESET_STORE`:
+      return Object.assign({}, initialState);
     default:
       return state;
   }
