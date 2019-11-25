@@ -5,15 +5,13 @@ import MainPage from "../main-page/main-page";
 import OfferDetails from "../offer-details/offer-details";
 
 const getPageScreen = (props) => {
-  const {offers, nearbyOffers, selectedCard, cardClickHandler, leaflet} = props;
+  const {nearbyOffers, selectedCard, cardClickHandler, leaflet} = props;
 
   switch (location.pathname) {
     case `/`:
       return (
         <MainPage
-          cards = {offers}
           onCardClick = {cardClickHandler}
-          name = {`Amsterdam`}
           leaflet = {leaflet}
         />
       );

@@ -104,7 +104,7 @@ export const offers = [
   {
     id: 4,
     city: {
-      name: `Amsterdam`,
+      name: `Paris`,
       location: {
         latitude: 52.38333,
         longitude: 4.9,

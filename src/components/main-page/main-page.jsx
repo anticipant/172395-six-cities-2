@@ -1,9 +1,13 @@
+import {connect} from "react-redux";
 import React, {PureComponent} from 'react';
 import PropTypes from 'prop-types';
 
 import Header from "../header/header";
 import Map from "../map/map";
 import OfferList from "../offer-list/offer-list";
+import {selectCityAction} from "../../actions/select-city-action";
+import {setOffersListAction} from "../../actions/set-offers-list-action";
+import CityList from "../city-list/CityList";
 
 class MainPage extends PureComponent {
   constructor(props) {
@@ -11,7 +15,7 @@ class MainPage extends PureComponent {
   }
 
   render() {
-    const {cards, name, onCardClick, leaflet} = this.props;
+    const {cards, cities, name, onCardClick, leaflet, selectCity} = this.props;
 
     return (
       <div className="page page--gray page--main">
@@ -22,36 +26,7 @@ class MainPage extends PureComponent {
           <div className="tabs">
             <section className="locations container">
               <ul className="locations__list tabs__list">
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>Paris</span>
-                  </a>
-                </li>
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>Cologne</span>
-                  </a>
-                </li>
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>Brussels</span>
-                  </a>
-                </li>
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item tabs__item--active">
-                    <span>Amsterdam</span>
-                  </a>
-                </li>
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>Hamburg</span>
-                  </a>
-                </li>
-                <li className="locations__item">
-                  <a className="locations__item-link tabs__item" href="#">
-                    <span>Dusseldorf</span>
-                  </a>
-                </li>
+                <CityList cities={cities} name={name} selectCity={selectCity}/>
               </ul>
             </section>
           </div>
@@ -66,7 +41,7 @@ class MainPage extends PureComponent {
                   <span className="places__sorting-type" tabIndex="0">
                   Popular
                     <svg className="places__sorting-arrow" width="7" height="4">
-                      <use xlinkHref="#icon-arrow-select"></use>
+                      <use xlinkHref="#icon-arrow-select"/>
                     </svg>
                   </span>
                   <ul className="places__options places__options--custom places__options--opened">
@@ -102,10 +77,30 @@ class MainPage extends PureComponent {
 }
 
 MainPage.propTypes = {
+  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
   cards: PropTypes.arrayOf(PropTypes.object).isRequired,
   name: PropTypes.string.isRequired,
   onCardClick: PropTypes.func.isRequired,
   leaflet: PropTypes.object,
+  selectCity: PropTypes.func.isRequired,
 };
 
-export default MainPage;
+const mapStateToProps = (state) => ({
+  cards: state.offersList,
+  cities: state.cities,
+  name: state.activeCity,
+});
+
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    selectCity: (cityName) => {
+      dispatch(setOffersListAction(cityName));
+      dispatch(selectCityAction(cityName));
+    },
+  };
+};
+
+export {MainPage};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainPage);

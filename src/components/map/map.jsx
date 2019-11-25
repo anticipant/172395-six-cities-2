@@ -9,36 +9,68 @@ class Map extends PureComponent {
       iconUrl: `img/pin.svg`,
       iconSize: [27, 39]
     });
-    this.offers = this.props.offers.filter((it) => it.city.name === this.props.name);
-    this.cityInfo = this.offers[0] ? this.offers[0].city : null;
+    this.getPins = this.getPins.bind(this);
+  }
+
+  getPins(offers) {
+    const {icon} = this;
+    const {leaflet} = this.props;
+    return offers.map((offer) => new leaflet.Marker([offer.location.latitude, offer.location.longitude], {icon}));
   }
 
   componentDidMount() {
-    const {
-      icon, offers, cityInfo
-    } = this;
+    const {offers, leaflet} = this.props;
 
-    const zoom = cityInfo.location.zoom;
-    const city = [cityInfo.location.latitude, cityInfo.location.longitude];
-    const map = this.props.leaflet.map(`map`, {
+    const cityInfo = offers[0] ? offers[0].city : null;
+    const zoom = cityInfo ? cityInfo.location.zoom : 8;
+    const latitude = cityInfo ? cityInfo.location.latitude : undefined;
+    const longitude = cityInfo ? cityInfo.location.longitude : undefined;
+    const city = latitude && longitude ? [latitude, longitude] : [52.3909, 4.8530];
+    const map = leaflet.map(`map`, {
       center: city,
       zoom,
       zoomControl: false,
       marker: true
     });
     map.setView(city, zoom);
-    this.props.leaflet
+
+    leaflet
       .tileLayer(this.LAYER_URL, {
         attribution: `&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>`
       })
       .addTo(map);
 
-    offers.map((offer) => [offer.location.latitude, offer.location.longitude]).forEach((it) => {
-      this.props.leaflet
-        .marker(it, {icon})
-        .addTo(map);
+    let marker = this.getPins(offers);
+
+    const markerGroup = leaflet.layerGroup(marker);
+    markerGroup.addTo(map);
+    this.setState({
+      map,
+      markerGroup,
     });
   }
+
+  componentDidUpdate(prevProps) {
+
+    const {
+      state: {map, markerGroup},
+      props: {name, leaflet, offers}
+    } = this;
+
+    if (prevProps.name !== name) {
+      map.removeLayer(markerGroup);
+
+      let marker = this.getPins(offers);
+
+      const newMarkerGroup = leaflet.layerGroup(marker);
+      newMarkerGroup.addTo(map);
+      this.setState({
+        map,
+        markerGroup: newMarkerGroup,
+      });
+    }
+  }
+
 
   render() {
     return (
