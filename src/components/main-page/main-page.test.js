@@ -9,10 +9,10 @@ it(`MainPage correctly renders after relaunch`, () => {
   const offers = [getTestCard(`MainPage`, 999, false)];
 
   const tree = renderer.create(<MainPage
-    cards={offers}
-    cities={[`Amsterdam`]}
+    offersList={offers}
+    cities={[{id: 1, name: `Amsterdam`}]}
     onCardClick={() => {}}
-    name={`Amsterdam`}
+    activeCity={`Amsterdam`}
     leaflet={leaflet}
     selectCity={() => {}}
   />).toJSON();

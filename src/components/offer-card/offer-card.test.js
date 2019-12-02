@@ -7,10 +7,8 @@ import OfferCard from "./offer-card";
 it(`OfferCard correctly renders after relaunch`, () => {
   const card = getTestCard(`OfferCard`, 123321123321, true);
   const tree = renderer.create(<OfferCard
-    key = {card.id}
-    card = {card}
-    onHover = {() => {}}
-    onCardClick = {() => {}}
+    item = {card}
+    onItemClick = {() => {}}
     blockClassName={`near-places`}
   />).toJSON();
   expect(tree).toMatchSnapshot();
