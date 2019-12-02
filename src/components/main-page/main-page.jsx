@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 
 import Header from "../header/header";
 import Map from "../map/map";
-import OfferList from "../offer-list/offer-list";
 import {selectCityAction} from "../../actions/select-city-action";
 import {setOffersListAction} from "../../actions/set-offers-list-action";
-import CityList from "../city-list/CityList";
+import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import OfferCard from "../offer-card/offer-card";
+import CityItem from "../city-item/city-item";
+
+const OfferCardWrapped = withActiveItem(OfferCard);
+const CityItemWrapped = withActiveItem(CityItem);
 
 class MainPage extends PureComponent {
   constructor(props) {
@@ -15,7 +19,7 @@ class MainPage extends PureComponent {
   }
 
   render() {
-    const {cards, cities, name, onCardClick, leaflet, selectCity} = this.props;
+    const {offersList, cities, activeCity, onCardClick, leaflet, selectCity} = this.props;
 
     return (
       <div className="page page--gray page--main">
@@ -26,7 +30,12 @@ class MainPage extends PureComponent {
           <div className="tabs">
             <section className="locations container">
               <ul className="locations__list tabs__list">
-                <CityList cities={cities} name={name} selectCity={selectCity}/>
+
+                <CityItemWrapped
+                  list = {cities}
+                  activeCity={activeCity}
+                  onItemClick = {selectCity}
+                />
               </ul>
             </section>
           </div>
@@ -34,7 +43,7 @@ class MainPage extends PureComponent {
             <div className="cities__places-container container">
               <section className="cities__places places">
                 <h2 className="visually-hidden">Places</h2>
-                <b className="places__found">{cards.length} places to stay in {name}</b>
+                <b className="places__found">{offersList.length} places to stay in {activeCity}</b>
                 <form className="places__sorting" action="#" method="get">
                   <span className="places__sorting-caption"
                   >Sort by</span>
@@ -53,18 +62,18 @@ class MainPage extends PureComponent {
                 </form>
                 <div className="cities__places-list places__list tabs__content">
 
-                  <OfferList
-                    blockClassName={`cities`}
-                    cards = {cards}
-                    onCardClick = {onCardClick}
+                  <OfferCardWrapped
+                    list = {offersList}
+                    onItemClick = {onCardClick}
+                    blockClassName = {`cities`}
                   />
 
                 </div>
               </section>
               <div className="cities__right-section">
                 <Map
-                  name = {name}
-                  offers = {cards}
+                  name = {activeCity}
+                  offers = {offersList}
                   leaflet = {leaflet}
                 />
               </div>
@@ -77,18 +86,18 @@ class MainPage extends PureComponent {
 }
 
 MainPage.propTypes = {
-  cities: PropTypes.arrayOf(PropTypes.string).isRequired,
-  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
-  name: PropTypes.string.isRequired,
+  cities: PropTypes.arrayOf(PropTypes.object).isRequired,
+  offersList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  activeCity: PropTypes.string.isRequired,
   onCardClick: PropTypes.func.isRequired,
   leaflet: PropTypes.object,
   selectCity: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => ({
-  cards: state.offersList,
+  offersList: state.offersList,
   cities: state.cities,
-  name: state.activeCity,
+  activeCity: state.activeCity,
 });
 
 

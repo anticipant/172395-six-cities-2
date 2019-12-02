@@ -2,10 +2,14 @@ import React, {PureComponent} from 'react';
 import PropTypes from "prop-types";
 
 import Header from "../header/header";
-import OfferList from "../offer-list/offer-list";
 import Map from "../map/map";
 import ReviewsList from "../reviews-list/reviews-list";
 import {reviews} from '../../mocks/reviews';
+import withActiveItem from "../../hocs/with-active-item/with-active-item";
+import OfferCard from "../offer-card/offer-card";
+
+
+const OfferCardWrapped = withActiveItem(OfferCard);
 
 class OfferDetails extends PureComponent {
   render() {
@@ -194,10 +198,10 @@ class OfferDetails extends PureComponent {
                 <h2 className="near-places__title">Other places in the neighbourhood</h2>
                 <div className="near-places__list places__list">
 
-                  <OfferList
-                    blockClassName={`near-places`}
-                    cards = {nearbyOffers}
-                    onCardClick = {this.props.onCardClick}
+                  <OfferCardWrapped
+                    list = {nearbyOffers}
+                    onItemClick = {this.props.onCardClick}
+                    blockClassName = {`near-places`}
                   />
 
                 </div>
