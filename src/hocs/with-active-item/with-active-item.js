@@ -14,11 +14,7 @@ const withActiveItem = (Component) => {
             key={it.id}
             item={it}
             onItemClick={this.props.onItemClick}
-            // при созании для OfferCard докидываем blockClassName
             blockClassName = {this.props.blockClassName}
-
-            // при созании для CityItem
-            // isActive={it.name === this.props.name}
             activeCity={this.props.activeCity}
           />
         );

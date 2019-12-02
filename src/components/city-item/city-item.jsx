@@ -28,12 +28,12 @@ class CityItem extends PureComponent {
 }
 
 CityItem.propTypes = {
-  item: PropTypes.arrayOf(PropTypes.shape({
+  item: PropTypes.shape({
     id: PropTypes.oneOfType([
       PropTypes.string, PropTypes.number
     ]),
     name: PropTypes.string,
-  })),
+  }),
   onItemClick: PropTypes.func.isRequired,
   activeCity: PropTypes.string.isRequired,
 };
