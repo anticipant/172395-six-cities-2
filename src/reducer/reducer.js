@@ -3,7 +3,7 @@ import {SELECT_CITY} from "../actions/select-city-action";
 import {SET_OFFERS_LIST} from "../actions/set-offers-list-action";
 
 export const initialState = {
-  cities: [`Paris`, `Cologne`, `Brussels`, `Amsterdam`, `Hamburg`, `Dusseldorf`],
+  cities: [{id: 1, name: `Paris`}, {id: 2, name: `Cologne`}, {id: 3, name: `Brussels`}, {id: 4, name: `Amsterdam`}, {id: 5, name: `Hamburg`}, {id: 6, name: `Dusseldorf`}],
   activeCity: `Amsterdam`,
   offers,
   offersList: offers.filter((it) => it.city.name === `Amsterdam`),
